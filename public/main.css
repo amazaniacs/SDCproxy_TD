@@ -1,0 +1,18 @@
+nav > img {
+  max-width: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+div.topFlexCont {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div#sidebar {
+  padding: 20px;
+}
