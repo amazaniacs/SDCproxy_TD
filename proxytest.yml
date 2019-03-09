@@ -1,0 +1,47 @@
+config:
+  target: "http://localhost:4020"
+  phases:
+    - duration: 120
+      arrivalRate: 300
+scenarios:
+  # - name: "GET request for a single product info"
+  #   weight: 100
+  #   flow:
+  #   - get:
+  #       url: "/api/products/{{$randomNumber(1,10005000)}}"
+
+  - name: "POST request to create a new product"
+    weight: 100
+    flow:
+    - post:
+        url: "/api/products"
+        json: 
+          name: "Amazon TEST"
+          category: "check"
+          manufacturer: "check"
+          price: 1346
+          is_prime: false
+          description: "Product test"
+          primary_image: "http://lorempixel.com/test1"
+          secondary_image: "http://lorempixel.com/test2"
+  
+  # - name: "PUT request to update an existing product"
+  #   weight: 5
+  #   flow:
+  #   - put:
+  #       url: "/api/products/{{$randomNumber(10000001, 10002000)}}"
+  #       json: 
+  #         name: "Amazon Update TEST"
+  #         category: "check1"
+  #         manufacturer: "check1"
+  #         price: 1234
+  #         is_prime: false
+  #         description: "Product update"
+  #         primary_image: "http://lorempixel.com/test1"
+  #         secondary_image: "http://lorempixel.com/test2"
+            
+  # - name: "DELETE request for a single product"
+  #   weight: 5
+  #   flow:
+  #   - delete:
+  #       url: "/api/products/{{$randomNumber(10000001, 10002000)}}"
